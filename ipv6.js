@@ -1,4 +1,3 @@
-function main();
 /**
  * Calculates an IPv4-mapped IPv6 address.
  * @param {string} ipv4 - An IPv4 address in dotted-quad format.
@@ -33,6 +32,7 @@ function getIpv4MappedIpv6Address(ipv4) {
         // Convert part to an integer, then convert to a hex string using method toString()
         // with a base 16 (hex) encoding.
         let hexString = parseInt(ipv4Quads[i]).toString(16);
+        
         // If hex is odd (single digit), prepend a '0'. This is why we wanted to work with a string.
         if (hexString.length % 2)
           hexString = '0' + hexString;
@@ -46,5 +46,6 @@ function getIpv4MappedIpv6Address(ipv4) {
     }
   }
   return ipv6Address;
-  module.exports.getIpv4MappedIpv6Address = getIpv4MappedIpv6Address;
 }
+
+module.exports.getIpv4MappedIpv6Address = getIpv4MappedIpv6Address;
